@@ -1,0 +1,363 @@
+create an android application which is basically a "Drive Size Viewer"
+App should show largest folder size and so on...
+User must be able to delete large files from the app
+develop the app in java (not kotlin)
+
+Give it as a single prompt to give to an agent to achieve this
+===================================================================================================
+The chatgpt output from above, use that to give prompt inside IDE
+
+Build a complete Android application in **Java (NOT Kotlin)** named **Drive Size Viewer** that analyzes device storage usage and helps users identify and delete large files and folders.
+
+## Objective
+
+Create a fast, modern Android storage analyzer similar to WinDirStat or DiskUsage. The app should scan internal storage, calculate folder sizes recursively, display the largest folders and files, and allow users to delete unwanted files directly from the app.
+
+## Technical Requirements
+
+### Platform
+
+* Android Studio (latest stable version)
+* Java only (no Kotlin)
+* Minimum SDK: 26
+* Target SDK: Latest stable
+* Material Design 3 UI
+* MVVM architecture
+* AndroidX libraries
+* RecyclerView for lists
+* Room database for caching scan results
+* Background scanning using WorkManager or ExecutorService
+* Runtime permission handling
+* Support scoped storage requirements for Android 11+
+
+---
+
+## Core Features
+
+### 1. Storage Scanner
+
+Implement a recursive storage scanner that:
+
+* Scans internal storage
+* Calculates total size of every folder
+* Calculates size of all files
+* Aggregates child folder sizes into parent folders
+* Skips inaccessible/system-protected directories gracefully
+* Runs on a background thread
+* Shows scan progress
+
+Store scan results in memory and Room database.
+
+Each scan result should contain:
+
+* Full path
+* Folder/File name
+* Size in bytes
+* Human readable size
+* Last modified date
+* File count
+* Folder count
+* Type (file/folder)
+
+---
+
+### 2. Largest Folders View
+
+Create a screen showing:
+
+Title: Largest Folders
+
+Columns:
+
+* Folder name
+* Full path
+* Size
+* Number of files
+* Percentage of total storage
+
+Features:
+
+* Sort descending by size
+* Search folders
+* Pull to refresh
+* Tap folder to open details
+
+Display top folders first:
+Example:
+
+1. Downloads – 12.4 GB
+2. Movies – 9.8 GB
+3. WhatsApp – 8.2 GB
+4. DCIM – 7.5 GB
+
+---
+
+### 3. Largest Files View
+
+Create a screen showing:
+
+Title: Largest Files
+
+Display:
+
+* File name
+* Path
+* Size
+* Extension
+* Last modified
+
+Features:
+
+* Sort by size descending
+* Search
+* Multi-select
+* Delete selected files
+
+Example:
+movie.mkv – 4.2 GB
+backup.zip – 3.8 GB
+video.mp4 – 2.1 GB
+
+---
+
+### 4. Folder Details Screen
+
+When user opens a folder:
+
+Show:
+
+* Folder path
+* Total size
+* File count
+* Subfolder count
+
+Display child files/folders sorted by size.
+
+Actions:
+
+* Open file
+* Share file
+* Delete file
+* Delete folder
+* Rescan folder
+
+---
+
+### 5. Delete Functionality
+
+Support:
+
+#### Android 10 and below
+
+* Direct file deletion
+
+#### Android 11+
+
+* Use Storage Access Framework
+* Use MediaStore where applicable
+* Request delete permissions properly
+
+Features:
+
+* Delete single file
+* Delete multiple files
+* Delete folder recursively
+* Confirmation dialog before deletion
+* Undo snackbar when possible
+* Update UI immediately after deletion
+
+---
+
+### 6. Storage Dashboard
+
+Home screen should show:
+
+* Total storage
+* Used storage
+* Free storage
+
+Cards:
+
+Largest Folders
+Largest Files
+Recently Modified Files
+Duplicate Candidates (basic implementation)
+
+Progress bar displaying storage utilization.
+
+---
+
+### 7. Duplicate Candidate Detection
+
+Basic duplicate finder:
+
+Group files by:
+
+* Size
+* Name
+* Optional SHA-256 hash verification
+
+Display:
+
+* Duplicate groups
+* Total reclaimable space
+
+Allow:
+
+* Select duplicates
+* Delete selected copies
+
+---
+
+### 8. Search
+
+Global search across:
+
+* Files
+* Folders
+
+Search by:
+
+* Name
+* Extension
+* Partial path
+
+Instant filtering.
+
+---
+
+### 9. Scan Management
+
+Features:
+
+* Start scan
+* Stop scan
+* Rescan all storage
+* Last scan timestamp
+* Cached results loading
+* Incremental updates
+
+---
+
+## UI Requirements
+
+### Main Navigation
+
+Bottom Navigation:
+
+1. Dashboard
+2. Largest Folders
+3. Largest Files
+4. Duplicates
+5. Settings
+
+---
+
+### Dashboard Cards
+
+Material cards showing:
+
+* Total Storage
+* Free Storage
+* Largest Folder
+* Largest File
+* Duplicate Space
+
+---
+
+### Folder/File List Item
+
+Show:
+
+* Icon
+* Name
+* Path
+* Size
+* Secondary metadata
+
+Use efficient RecyclerView adapters with DiffUtil.
+
+---
+
+## Performance Requirements
+
+* Handle 100,000+ files
+* No ANRs
+* Background scanning only
+* Memory efficient traversal
+* Pagination where needed
+* Cached scan results
+* Fast sorting
+
+---
+
+## Permissions
+
+Handle:
+
+READ_EXTERNAL_STORAGE
+WRITE_EXTERNAL_STORAGE (legacy devices)
+
+Android 11+:
+
+* MANAGE_EXTERNAL_STORAGE (optional implementation)
+* SAF-based access
+
+Provide proper user explanations before permission requests.
+
+---
+
+## Project Structure
+
+Create clean package architecture:
+
+com.drivesizeviewer
+
+* data
+
+  * database
+  * repository
+  * scanner
+
+* domain
+
+  * models
+  * usecases
+
+* ui
+
+  * dashboard
+  * folders
+  * files
+  * duplicates
+  * settings
+
+* utils
+
+* adapters
+
+* workers
+
+---
+
+## Deliverables
+
+Generate:
+
+1. Complete Android Studio project
+2. Java source code only
+3. Room entities, DAOs, repositories
+4. Storage scanner implementation
+5. RecyclerView adapters
+6. ViewModels
+7. Activities/Fragments
+8. Material XML layouts
+9. Permission handling
+10. File deletion implementation
+11. Search implementation
+12. Duplicate detection implementation
+13. Caching mechanism
+14. Buildable and runnable project
+
+The generated code must be production-ready, modular, well-commented, follow Android best practices, and compile without errors. Include all required Gradle dependencies, AndroidManifest configuration, Room setup, ViewModels, navigation, and complete implementation details rather than placeholders.
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Drive Size Viewer</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_folders">Folders</string>
+    <string name="nav_files">Files</string>
+    <string name="nav_duplicates">Duplicates</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Dashboard -->
+    <string name="storage_usage">Storage Usage</string>
+    <string name="largest_folders">Largest Folders</string>
+    <string name="largest_files">Largest Files</string>
+    <string name="recently_modified">Recently Modified</string>
+    <string name="duplicate_candidates">Duplicate Candidates</string>
+    <string name="total_size">Total Size: %1$s</string>
+    <string name="free_space">%1$s Free of %2$s</string>
+    <string name="used_space">%1$s Used</string>
+
+    <!-- Scan -->
+    <string name="scan_title">Storage Scan</string>
+    <string name="start_scan">Start Scan</string>
+    <string name="stop_scan">Stop Scan</string>
+    <string name="scan_in_progress">Scanning storage…</string>
+    <string name="scanning_item">Scanning: %1$s</string>
+    <string name="scanned_items_count">Scanned %1$d files/folders</string>
+    
+    <!-- Dialogs -->
+    <string name="confirm_delete_title">Confirm Deletion</string>
+    <string name="confirm_delete_message">Are you sure you want to permanently delete this item? This action cannot be undone.</string>
+    <string name="confirm_delete_multiple_message">Are you sure you want to permanently delete the %1$d selected items? This action cannot be undone.</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_success">Deleted successfully</string>
+    <string name="delete_failed">Deletion failed</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="clear_cache">Clear Cache Database</string>
+    <string name="clear_cache_desc">Remove all scanned items from local DB</string>
+    <string name="verify_hash">SHA-256 Hash Verification</string>
+    <string name="verify_hash_desc">Calculate SHA-256 hashes for precise duplicate finding (slower scan)</string>
+
+    <!-- General -->
+    <string name="search_hint">Search files and folders…</string>
+    <string name="no_data">No data. Please run storage scan first.</string>
+    <string name="permission_required_title">Storage Access Required</string>
+    <string name="permission_required_message">This app needs access to all files to analyze storage utilization and list/delete files. Please grant All Files Access in the settings screen.</string>
+    <string name="grant_permission">Grant Permission</string>
+</resources>
