@@ -34,14 +34,14 @@
                     android:layout_height="wrap_content"
                     android:text="Storage Utilization"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="?attr/colorOnSurface" />
 
                 <TextView
                     android:id="@+id/text_storage_percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:textColor="#FFFFFF"
+                    android:textColor="?attr/colorOnSurface"
                     android:textSize="36sp"
                     android:textStyle="bold"
                     tools:text="74%" />
@@ -52,8 +52,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:layout_marginBottom="12dp"
-                    app:trackColor="#40FFFFFF"
-                    app:indicatorColor="#FFFFFF"
+                    app:trackColor="?attr/colorSurfaceVariant"
+                    app:indicatorColor="?attr/colorPrimary"
                     app:trackCornerRadius="8dp"
                     app:trackThickness="8dp"
                     tools:progress="74" />
@@ -66,7 +66,7 @@
                         android:id="@+id/text_storage_used"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#EADDFF"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:layout_alignParentStart="true"
                         tools:text="Used: 92.4 GB" />
@@ -75,7 +75,7 @@
                         android:id="@+id/text_storage_free"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="#EADDFF"
+                        android:textColor="?attr/colorOnSurfaceVariant"
                         android:textAppearance="?attr/textAppearanceBodyMedium"
                         android:layout_alignParentEnd="true"
                         tools:text="Free: 35.6 GB" />
