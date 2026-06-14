@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Pure Black and White Theme Colors -->
-    <color name="primary">#000000</color>
+    <color name="primary">#0D47A1</color>
     <color name="onPrimary">#FFFFFF</color>
     <color name="primaryContainer">#FFFFFF</color>
-    <color name="onPrimaryContainer">#000000</color>
+    <color name="onPrimaryContainer">#0D47A1</color>
 
-    <color name="secondary">#000000</color>
+    <color name="secondary">#0D47A1</color>
     <color name="onSecondary">#FFFFFF</color>
     <color name="secondaryContainer">#FFFFFF</color>
-    <color name="onSecondaryContainer">#000000</color>
+    <color name="onSecondaryContainer">#0D47A1</color>
 
-    <color name="tertiary">#000000</color>
+    <color name="tertiary">#0D47A1</color>
     <color name="onTertiary">#FFFFFF</color>
     <color name="tertiaryContainer">#FFFFFF</color>
-    <color name="onTertiaryContainer">#000000</color>
+    <color name="onTertiaryContainer">#0D47A1</color>
 
     <!-- Background and Neutral Colors -->
     <color name="background">#FFFFFF</color>
-    <color name="onBackground">#000000</color>
+    <color name="onBackground">#0D47A1</color>
     <color name="surface">#FFFFFF</color>
-    <color name="onSurface">#000000</color>
+    <color name="onSurface">#0D47A1</color>
     <color name="surfaceVariant">#FFFFFF</color>
-    <color name="onSurfaceVariant">#000000</color>
+    <color name="onSurfaceVariant">#0D47A1</color>
 
     <!-- Accent and Error -->
-    <color name="error">#000000</color>
+    <color name="error">#0D47A1</color>
     <color name="onError">#FFFFFF</color>
     <color name="errorContainer">#FFFFFF</color>
-    <color name="onErrorContainer">#000000</color>
+    <color name="onErrorContainer">#0D47A1</color>
 
-    <color name="outline">#000000</color>
+    <color name="outline">#0D47A1</color>
 
     <!-- Custom Colors for storage dashboard/charts -->
-    <color name="colorUsed">#000000</color>
+    <color name="colorUsed">#0D47A1</color>
     <color name="colorFree">#888888</color>
     <color name="colorSystem">#555555</color>
 </resources>
